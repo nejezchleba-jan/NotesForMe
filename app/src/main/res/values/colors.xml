@@ -2,7 +2,8 @@
 <resources>
     <color name="colorPrimary">#292929</color>
     <color name="colorPrimaryDark">#292929</color>
-    <color name="colorAccent">#FDBE3B</color>
+    <color name="colorCancel">#FDBE3B</color>
+    <color name="colorAccent">#4caf50</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorSearchIcon">#DBDBDB</color>
     <color name="colorTextHint">#7B7B7B</color>
