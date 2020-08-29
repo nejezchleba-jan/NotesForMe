@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">NotesForMe</string>
     <string name="notes_for_me">Notes For Me</string>
@@ -22,5 +23,5 @@
     <string name="change_language">Device Language</string>
     <string name="lang">EN</string>
     <string name="light">Light</string>
-    <string name="locale_err">English locale not found.</string>
+    <string name="locale_err">Czech locale is not supported.</string>
 </resources>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.preference.PreferenceScreen
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        app:key="preferences"
+        app:title="App preferences"
+        app:initialExpandedChildrenCount="2">
+
+    <SwitchPreference
+        app:key="darkmode"
+        app:title="Dark mode"
+        app:icon="@drawable/ic_darkmode" />
+
+    <ListPreference
+        app:key="language"
+        app:title="Choose your language"
+        app:icon="@drawable/ic_language"
+        app:entries="@array/language_entry"
+        app:entryValues="@array/language_values"
+        app:dialogTitle="Language"/>
+
+    </PreferenceCategory>
+
+</androidx.preference.PreferenceScreen>

@@ -48,4 +48,6 @@ dependencies {
     //Rounded ImageView
     implementation "com.makeramen:roundedimageview:2.3.0"
 
+    implementation "androidx.preference:preference:1.1.1"
+
 }

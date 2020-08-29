@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NotesForMe</string>
+    <string name="notes_for_me">Notes For Me</string>
+    <string name="my_notes">Moje poznámky</string>
+    <string name="search_notes">Prohledat poznámky</string>
+    <string name="note_title">Nadpis poznámky</string>
+    <string name="note_subtitle">Podnadpis poznámky</string>
+    <string name="type_note_here">Zde napište poznámku...</string>
+    <string name="miscellaneous">Možnosti</string>
+    <string name="pick_color">Vyber barvu:</string>
+    <string name="add_image">Přidat obrázek</string>
+    <string name="add">PŘIDAT</string>
+    <string name="enter_url">Zadejte URL</string>
+    <string name="add_url">Přidat URL</string>
+    <string name="cancel">ZRUŠIT</string>
+    <string name="delete_note">Smazat poznámku</string>
+    <string name="delete_note_choice">SMAZAT POZNÁMKU</string>
+    <string name="are_you_sure_you_want_to_delete_this_note">Jste si jisti, že chcete smazat tuto poznámku?</string>
+    <string name="settings">Nastavení</string>
+    <string name="change_theme">Změnit vzhled</string>
+    <string name="dark">Tmavý</string>
+    <string name="light">Světlý</string>
+    <string name="change_language">Jazyk zařízení</string>
+    <string name="lang">CZ</string>
+    <string name="locale_err">Zařízení nepodporuje anglický jazyk.</string>
+</resources>
