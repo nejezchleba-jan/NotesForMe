@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="colorDoneCheck">#000000</color>
     <color name="colorPrimary">#292929</color>
+    <color name="buttonColor">#000000</color>
     <color name="colorPrimaryDark">#292929</color>
+    <color name="colorAdd">#1b5e20</color>
     <color name="colorCancel">#FDBE3B</color>
     <color name="colorAccent">#4caf50</color>
     <color name="colorWhite">#FFFFFF</color>
@@ -16,7 +19,8 @@
     <color name="colorNoteColor2">#FDBE38</color>
     <color name="colorNoteColor3">#FF4842</color>
     <color name="colorNoteColor4">#3A52FC</color>
-    <color name="colorNoteColor5">#000000</color>
+    <color name="colorNoteColor5">#7B1FA2</color>
     <color name="colorDelete">#FF4842</color>
     <color name="colorSearchBackground">#333333</color>
+
 </resources>

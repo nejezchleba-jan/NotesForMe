@@ -17,8 +17,6 @@
         app:key="language"
         app:title="Choose your language"
         app:icon="@drawable/ic_language"
-        app:entries="@array/language_entry"
-        app:entryValues="@array/language_values"
         app:dialogTitle="Language"/>
 
     </PreferenceCategory>

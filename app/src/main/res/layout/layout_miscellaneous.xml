@@ -58,8 +58,7 @@
 
                 android:contentDescription="@string/app_name"
                 android:src="@drawable/ic_done"
-
-                android:tint="@color/colorWhite" />
+                android:tint="@color/colorDoneCheck" />
         </FrameLayout>
 
         <FrameLayout
@@ -79,7 +78,7 @@
                 android:layout_height="@dimen/_35sdp"
                 android:contentDescription="@string/app_name"
                 android:padding="@dimen/_10sdp"
-                android:tint="@color/colorWhite"/>
+                android:tint="@color/colorDoneCheck"/>
         </FrameLayout>
 
         <FrameLayout
@@ -99,7 +98,7 @@
                 android:layout_height="@dimen/_35sdp"
                 android:contentDescription="@string/app_name"
                 android:padding="@dimen/_10sdp"
-                android:tint="@color/colorWhite"/>
+                android:tint="@color/colorDoneCheck"/>
         </FrameLayout>
 
         <FrameLayout
@@ -119,7 +118,7 @@
                 android:layout_height="@dimen/_35sdp"
                 android:contentDescription="@string/app_name"
                 android:padding="@dimen/_10sdp"
-                android:tint="@color/colorWhite"/>
+                android:tint="@color/colorDoneCheck"/>
         </FrameLayout>
 
         <FrameLayout
@@ -139,7 +138,7 @@
                 android:layout_height="@dimen/_35sdp"
                 android:contentDescription="@string/app_name"
                 android:padding="@dimen/_10sdp"
-                android:tint="@color/colorWhite"/>
+                android:tint="@color/colorDoneCheck"/>
         </FrameLayout>
 
     </LinearLayout>

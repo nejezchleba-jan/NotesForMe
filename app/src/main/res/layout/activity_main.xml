@@ -9,7 +9,7 @@
 
     <TextView
         android:id="@+id/textNotes"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="@dimen/_10sdp"
         android:fontFamily="@font/ubuntu_bold"
@@ -37,8 +37,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_8sdp"
-
         android:layout_marginEnd="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_8sdp"
         android:background="@drawable/background_search"
         android:gravity="center_vertical"
         android:orientation="horizontal"
@@ -51,7 +51,7 @@
             android:layout_height="@dimen/_20sdp"
             android:contentDescription="@string/app_name"
             android:src="@drawable/ic_search"
-            android:tint="@color/colorSearchIcon"/>
+            app:tint="@color/colorSearchIcon" />
         
         <EditText
             android:id="@+id/inputsearch"

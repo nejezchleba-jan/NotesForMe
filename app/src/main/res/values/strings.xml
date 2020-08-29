@@ -23,4 +23,6 @@
     <string name="lang">EN</string>
     <string name="light">Light</string>
     <string name="locale_err">English locale not found.</string>
+    <string name="app_information">App Information</string>
+    <string name="app_version">App version</string>
 </resources>

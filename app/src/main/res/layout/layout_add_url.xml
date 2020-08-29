@@ -67,7 +67,7 @@
         android:includeFontPadding="false"
         android:padding="@dimen/_8sdp"
         android:text="@string/add"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/colorAdd"
         android:textSize="@dimen/_13ssp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

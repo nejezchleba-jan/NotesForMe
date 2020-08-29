@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 
@@ -147,6 +149,9 @@ public class MainActivity extends AppCompatActivity implements NotesListener {
                startActivityForResult(new Intent(getApplicationContext(), PreferenceActivity.class), REQUEST_CODE_PREFERENCES_CHANGED);
 			}
 		});
+
+		checkIfDarkMode();
+
 	}
 
 	private void selectImage() {
@@ -224,6 +229,28 @@ public class MainActivity extends AppCompatActivity implements NotesListener {
 		dialogAddURL.show();
 	}
 
+	private void checkIfDarkMode() {
+		SharedPreferences sharedPreferences
+				= getSharedPreferences(
+				"sharedPrefs", MODE_PRIVATE);
+		final boolean isDarkModeOn
+				= sharedPreferences
+				.getBoolean(
+						"isDarkModeOn", true);
+
+		if (isDarkModeOn) {
+			AppCompatDelegate
+					.setDefaultNightMode(
+							AppCompatDelegate
+									.MODE_NIGHT_YES);
+		} else {
+			AppCompatDelegate
+					.setDefaultNightMode(
+							AppCompatDelegate
+									.MODE_NIGHT_NO);
+		}
+	}
+
 	@Override
 	public void onNoteClicked(Note note, int position) {
 		noteClickedPosition = position;
@@ -298,4 +325,5 @@ public class MainActivity extends AppCompatActivity implements NotesListener {
 			recreate();
 		}
 	}
+
 }

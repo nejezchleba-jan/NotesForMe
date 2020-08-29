@@ -21,7 +21,9 @@
     <string name="change_theme">Změnit vzhled</string>
     <string name="dark">Tmavý</string>
     <string name="light">Světlý</string>
-    <string name="change_language">Jazyk zařízení</string>
+    <string name="change_language">Jazyk</string>
     <string name="lang">CZ</string>
     <string name="locale_err">Zařízení nepodporuje anglický jazyk.</string>
+    <string name="app_information">Informace o aplikaci</string>
+    <string name="app_version">Verze aplikace</string>
 </resources>

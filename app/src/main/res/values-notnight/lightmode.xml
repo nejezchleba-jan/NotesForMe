@@ -1,2 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <color name="colorDoneCheck">#ffffff</color>
+    <color name="buttonColor">#A4A4A4</color>
+    <color name="colorAccent">#4caf50</color>
+
+    <!--LIGHT MODE-->
+    <color name="colorAdd">#1b5e20</color>
+    <color name="colorCancel">#000000</color>
+    <color name="colorNoteColor2">#FDBE38</color>
+    <color name="colorNoteColor3">#FF4842</color>
+    <color name="colorNoteColor4">#3A52FC</color>
+    <color name="colorNoteColor5">#7B1FA2</color>
+    <color name="colorDelete">#FF4842</color>
+
+    <color name="colorPrimary">#fafafa</color>
+    <color name="colorPrimaryDark">#616161</color>
+    <color name="colorWhite">#000000</color>
+    <color name="colorSearchIcon">#2F2D2E</color>
+    <color name="colorTextHint">#888888</color>
+    <color name="colorQuickActionBackground">#CECECE</color>
+    <color name="colorTextSubtitle">#000000</color>
+    <color name="colorDefaultNoteColor">#999999</color>
+    <color name="colorNoteSubtitleText">#000000</color>
+    <color name="colorMiscellaneousBackground">#B0B0B0</color>
+    <color name="colorSearchBackground">#CECECE</color>
+    <color name="colorIcons">#454244</color>
+
+</resources>
