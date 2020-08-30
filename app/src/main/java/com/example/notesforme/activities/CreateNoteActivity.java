@@ -6,16 +6,21 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.core.content.res.ResourcesCompat;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -34,13 +39,19 @@ import android.widget.Toast;
 import com.example.notesforme.R;
 import com.example.notesforme.database.NotesDatabase;
 import com.example.notesforme.entities.Note;
-import com.example.notesforme.listeners.NotesListener;
+import com.flask.colorpicker.ColorPickerView;
+import com.flask.colorpicker.OnColorSelectedListener;
+import com.flask.colorpicker.builder.ColorPickerClickListener;
+import com.flask.colorpicker.builder.ColorPickerDialogBuilder;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
+
 
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+
+import static com.flask.colorpicker.builder.ColorPickerDialogBuilder.with;
 
 public class CreateNoteActivity extends AppCompatActivity {
 
@@ -51,6 +62,7 @@ public class CreateNoteActivity extends AppCompatActivity {
     private TextView textWebURL;
     private LinearLayout layoutWebURL;
 
+    private int defaultNoteColor = 333333;
     private String selectedNoteColor;
     private String selectedImagePath;
 
@@ -59,6 +71,7 @@ public class CreateNoteActivity extends AppCompatActivity {
 
     private AlertDialog dialogAddURL;
     private AlertDialog dialogDeleteNote;
+    private AlertDialog dialogColorPicker;
 
     private  Note alreadyAvailableNote;
 
@@ -101,7 +114,7 @@ public class CreateNoteActivity extends AppCompatActivity {
             }
         });
 
-        selectedNoteColor = "#333333";
+        selectedNoteColor = "#" + defaultNoteColor;
         selectedImagePath = "";
 
         if(getIntent().getBooleanExtra("isViewOrUpdate", false)){
@@ -230,7 +243,16 @@ public class CreateNoteActivity extends AppCompatActivity {
             }
         });
 
-        final ImageView imageColor1 = layoutMiscellaneous.findViewById(R.id.imageColor1);
+
+        layoutMiscellaneous.findViewById(R.id.layoutNoteColor).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                showColorDialog(CreateNoteActivity.this);
+            }
+        });
+
+        /*final ImageView imageColor1 = layoutMiscellaneous.findViewById(R.id.imageColor1);
         final ImageView imageColor2 = layoutMiscellaneous.findViewById(R.id.imageColor2);
         final ImageView imageColor3 = layoutMiscellaneous.findViewById(R.id.imageColor3);
         final ImageView imageColor4 = layoutMiscellaneous.findViewById(R.id.imageColor4);
@@ -300,23 +322,11 @@ public class CreateNoteActivity extends AppCompatActivity {
                 setViewSubtitleIndicator();
             }
 
-        });
+        });*/
 
         if(alreadyAvailableNote != null && alreadyAvailableNote.getColor() != null && !alreadyAvailableNote.getColor().trim().isEmpty()) {
-            switch (alreadyAvailableNote.getColor()) {
-                case "#FDBE3B":
-                    layoutMiscellaneous.findViewById(R.id.viewColor2).performClick();
-                    break;
-                case "#FF4842":
-                    layoutMiscellaneous.findViewById(R.id.viewColor3).performClick();
-                    break;
-                case "#3A52FC":
-                    layoutMiscellaneous.findViewById(R.id.viewColor4).performClick();
-                    break;
-                case "#7B1FA2":
-                    layoutMiscellaneous.findViewById(R.id.viewColor5).performClick();
-                    break;
-            }
+            findViewById(R.id.viewColor).getBackground().setTint(Color.parseColor(alreadyAvailableNote.getColor()));
+            findViewById(R.id.viewsSubtitleIndicator).getBackground().setTint(Color.parseColor(alreadyAvailableNote.getColor()));
         }
 
         layoutMiscellaneous.findViewById(R.id.layoutAddImage).setOnClickListener(new View.OnClickListener() {
@@ -509,5 +519,37 @@ public class CreateNoteActivity extends AppCompatActivity {
             });
         }
         dialogAddURL.show();
+    }
+
+    private void showColorDialog(Context context) {
+        ColorPickerDialogBuilder
+            .with(context,R.style.ColorPickerDialogTheme)
+            .setTitle(getResources().getString(R.string.pick_color))
+            .initialColor(Color.parseColor("#ffffff"))
+            .wheelType(ColorPickerView.WHEEL_TYPE.CIRCLE)
+            .lightnessSliderOnly()
+            .density(8)
+            .setOnColorSelectedListener(new OnColorSelectedListener() {
+                @Override
+                public void onColorSelected(int selectedColor) {
+
+                }
+            })
+            .setPositiveButton(getResources().getString(R.string.add), new ColorPickerClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int selectedColor, Integer[] allColors) {
+                    selectedNoteColor = "#" + Integer.toHexString(selectedColor);
+                    findViewById(R.id.viewColor).getBackground().setTint(selectedColor);
+                    findViewById(R.id.viewsSubtitleIndicator).getBackground().setTint(selectedColor);
+                }
+            })
+            .setNegativeButton(getResources().getString(R.string.cancel), new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+
+                }
+            })
+            .build()
+            .show();
     }
 }
